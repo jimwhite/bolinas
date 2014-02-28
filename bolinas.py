@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python2.7
 
 #This is the main Bolinas script that runs the parser.
 
@@ -112,11 +112,11 @@ if __name__ == "__main__":
     # Direct output to stdout if no filename is provided
     if config.output_type is not "derivation":
         if config.output_file:
-            output_file = open(config.output_file,'wa')
+            output_file = open(config.output_file,'w')
         else:
             output_file = sys.stdout        
 
-    with open(config.grammar_file,'ra') as grammar_file:
+    with open(config.grammar_file,'r') as grammar_file:
         # Select the parser and rule class to use 
         if config.parser == 'td':
             parser_class = ParserTD 
